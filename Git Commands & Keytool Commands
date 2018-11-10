@@ -1,0 +1,72 @@
+Git Commands & Keytool Commands
+
+git add (all other files)
+git commit -m 'reinitialized files'
+git push origin master --force  # <- caution, --force can delete others work.
+
+
+
+To create new branch from Existing Branch
+
+git clone {URL : of the branch that needs to be cloned}
+git branch
+   git branch
+   cd gateway/
+   git branch
+   git checkout ESIGN_GAURDIAN_MIN_FCI
+   git branch
+   git pull
+   git branch
+   git checkout -b ESIGN_GAURDIAN_MIN_FCI_ONBOARDING_UPGRADE
+   git branch
+   git pull origin ESIGN_GAURDIAN_MIN_FCI
+
+
+
+
+
+ Create a new branch
+
+cd validation_service/
+    git status
+    git stash
+    git status
+    git fetch && git checkout feature/ErrorCodeMapper_Validation_service
+    git stash pop
+    git branch
+   
+
+
+
+Registering Certificates
+
+
+cd /Library/Java/JavaVirtualMachines/
+   ls
+    pwd
+    cd jdk1.8.0_171.jdk/
+    ls
+    cd Contents/
+    ls
+    ls
+    cd Home/
+    pwd
+    cd jre/lib/security/
+    ls
+    ls -trhr
+    sudo cp cacerts cacerts-`date +%F`
+    ls -ltrh
+    sudo keytool -import -trustcacerts -keystore cacerts -storepass changeit -alias payment2.0 -file /Users/B0205328/Documents/workspace-sts-3.9.4.RELEASE/ClosedWallet/properties/certificates/client.cer
+    vi /etc/hosts
+    sudo vim /etc/hosts
+    sudo keytool -import -trustcacerts -keystore cacerts -storepass changeit -alias payment2.0 -file /Users/B0205328/Desktop/Projects/customer/properties/certificates/client.cer
+    sudo keytool -import -trustcacerts -keystore cacerts -storepass changeit -alias payment2.0 -file /Users/B0205328/Desktop/Projects/customer/properties/certificates/client.cer
+    ls -altrh
+    rm cacerts
+    sudo rm cacerts
+    cp cacerts-2018-08-29 cacerts
+    sudo cp cacerts-2018-08-29 cacerts
+    sudo keytool -import -trustcacerts 
+
+
+

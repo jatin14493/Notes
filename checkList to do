@@ -1,0 +1,20 @@
+checkList to do
+
+
+- Immutable Classes
+- Equals and HashCode method
+- Method Overloading vs Method overriding
+- HashMap , HashSet
+- Exception Hierarchy Rules in Method Overriding
+- Comparator vs Comparable
+- Generics (Why?)
+- Singleton
+- Design Patterns (Factory, Abstract, Builder)
+- Fail Fast vs Fail Safe
+- Garbage Collection (Finalize() method)
+- Mark and Sweep Algorithm
+- Multi-theading Basics 
+- Sleep vs wait
+- Locks In Java
+- Producer Consumer Problem
+- BlockingQueue

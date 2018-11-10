@@ -1,0 +1,678 @@
+Coding Problems
+
+Largest cycle in a tree
+You are given a tree of N nodes and N−1 edges. Now you need to select two nodes a and b in the tree such that the cycle that will be formed after adding an edge between the two nodes a and b, its length should be maximum. If there are more than one possible answers, you can output any of them.
+Input The first line contains an integer N as input. Next N−1 lines contain a pair of integers (a,b) that denote there is an edge between the two nodes a and b in the tree.
+Output In the output, you need to print two integers separated by space which denote the nodes between which you can add the edge so as to maximize the length of the cycle in the tree.
+Constraints
+1≤N≤10^5
+
+Sample Input
+7
+1 2
+1 3
+2 4
+2 5
+3 6
+3 7
+
+Sample Output
+4 6
+
+Explanation
+If you add an edge between the nodes 4 and 6 then you see that it forms the largest cycle in the tree. Some other possible outputs are -  5 6 or 5 7.
+
+
+
+Question 1:
+Write a program to take the year as the input from the user. 
+If the current year is a leap year then print the day of the extra day in the year.
+If the entered year is not a leap year, find the closest leap year either before or after the current year and then print the day of the extra day in the year. 
+
+Exception case:
+If the closest leap year either before or after is equidistant from the current year, print the day of the extra day in the year in both cases 
+
+Sample1:
+Input: 2012
+Output:
+Wednesday
+
+Sample2:
+Input: 2013
+Output:
+This is not a leap year
+Closest leap year: 2012
+Wednesday
+
+Question 2:
+In an organization, an employee is given multiple devices to carry out his/her day to day operations.
+Create a DB structure and API's to track the same. 
+
+Details Needed form the API:
+1. Inserting the details of a new employee 
+2. Inserting the device details for a given employee
+3. Updating, deleting the details of an employee or device
+
+Deploy appropriate GET, POST, PATCH and DELETE API's to handle all the cases required 
+
+Details to be stored on the DB:
+1. Employee ID
+2. First Name
+3. Last Name
+4. Device ID
+
+Use localhost DB Engine to do the same
+
+Question 3:
+Write a Python program to download all files for the last one year from https://nseindia.com/products/content/equities/equities/archieve_eq.htm
+Select report type as: Bhavcopy
+
+Store the details on a .CSV and attach
+
+Question 4:
+Write a Python program to read an excel worksheet and print all the unique records present in the worksheet and their count.
+Please find the excel file attached for the same
+
+
+
+
+Problem 1 : Flatten a List
+
+Given a List of objects which could potentially be Lists themselves (in other words, nested lists), write a Java method which “flattens” the given List - i.e. a single List, containing the lowest-level objects only. Write JUnit tests which test the method, including the test case below. Note: You need NOT write code for reading from standard input or parsing a string.
+Test case:
+Input List: [[1], 2, [[3, 4], 5], [[[]]], [[[6]]], 7, 8, []]
+Output List: [1, 2, 3, 4, 5, 6, 7, 8]
+
+
+Problem 2 : Calculate the value of a polynomial
+Consider a single-variable polynomial (see https://www.mathsisfun.com/algebra/polynomials.html), for example: 2x 3 - 6x 2 + 2x - 1
+1) Write a class/classes to represent such polynomials. The polynomial should have a single variable (“x” in this case), but any number of terms and exponents.
+2) Using this class/classes, write a method which takes 2 inputs:
+a) A polynomial
+b) A value of “x”
+And then calculates and returns the value of the polynomial for the given input. Write JUnit tests which test the method, including the test case below. Note: You need NOT write code for reading from standard input or parsing a string.
+Test case:
+Polynomial: 2x 3 - 6x 2 + 2x - 1
+For, x = 3
+Output: 5
+
+
+
+http://10.56.110.213:8002/apis/create
+Rapido Question 3
+
+
+Prize Money
+The Coder bank of Coderland has decided to start an offer for its account holders. The currency denominations used in Coderland are different than those used generally. There are N currency denominations in Coderland which are given in the form of an array. The offer from the bank is that the account holder which requests the minimum amount greater than the maximum currency denomination available at the bank which cannot be paid to the account holder will be given a gift. Since you are a customer of this bank, you want to win this gift. Print the number which can get you this prize.
+Input Format
+The first line of input contains the integer 
+N
+ denoting the number of currency denominations. The second line of input contains 
+N
+ integers separated by spaces denoting the currency denominations available at the bank.
+Output Format
+Print the number which gets the Gift voucher.
+Constraints
+1≤N≤100
+1≤Di≤10^6
+NOTE: Consider the bank has an infinite supply of each denomination. If no such number exists, output "Fake Offer!" without quotes.
+
+
+Sample Input
+
+3
+2 6 9
+Sample Output
+
+Fake Offer!
+
+Explanation
+The maximum currency denomination available at bank is 
+9
+. So your goal is to find a value greater than 9 which can't be formed using the current denominations available with bank.  Suppose we assume answer is 10, but its impossible because you can form value 10 using 1 coin of value 6 and two coins of value 2. Now assume the answer would be 11 , but its clear that if you use one coin of value 9 and one of value 2 then you can form the value 11. So this goes on for ever and there is no value greater than 9 which can't be formed using the given coin denomiations 
+
+so our output is Fake Offer! .
+ 
+
+Note: Y
+
+
+
+Case :
+
+If array contains 1,  then FAKE OFFER
+IF all values are even, then greatest value +1 is the answer
+
+
+
+
+Byju’s
+
+
+Question1
+
+Max. Marks 100.00
+
+Vegetable Market
+There are N stalls in a vegetable market that are selling vegetables. You have to buy an equal amount of vegetables from each stall. If a stall does not have enough vegetables to offer, then you have to buy all the vegetables available in that stall. If you are given the number of vegetables that every stall can offer, determine the minimum quantity that you need to buy from each stall such that you have at least K vegetables in total.
+Input format
+* First line: Integer N denoting the number of stalls
+* Next line: N space-separated integers and quani denoting the ith integer which determines the quantity of vegetables that ith stall would be offering
+* Next line: Integer Q denoting the number of queries
+* Next Q lines: Integer Ki denoting the minimum amount of vegetables needed in total
+Output format
+* For each query, print the minimum quantity of vegetables that you have to buy from each shop in a new line. Print − 1   if it is not possible to buy the required number of vegetables.
+Constraints
+1
+≤
+N
+≤
+10
+5
+1
+≤
+q
+u
+a
+n
+i
+≤
+10
+6
+1
+≤
+Q
+≤
+10
+5
+1
+≤
+K
+i
+≤
+10
+11
+ 
+
+
+Sample Input
+
+5
+3 8 4 1 7
+5
+13
+19
+3
+25
+22
+Sample Output
+
+3
+6
+1
+-1
+7
+
+Explanation
+Query 1: By taking 
+3
+ vegetables from every stall, we get 
+3
++
+3
++
+3
++
+1
++
+3
+=
+13
+. If we take 
+2
+ vegetables, we would get 
+2
++
+2
++
+2
++
+1
++
+2
+=
+9
+.
+Query 2: By taking 
+6
+ from each stall, we get 
+3
++
+6
++
+4
++
+1
++
+6
+=
+20
+.
+Query 4: Even if we take all from every shop, we would have 
+3
++
+8
++
+4
++
+1
++
+7
+=
+23
+. Hence the answer is 
+−
+1
+.
+
+
+
+
+
+Byju’s
+
+Question 2
+
+Equal Division
+There are 
+N
+ teams in a software company. The 
+i
+t
+h
+ team has 
+B
+i
+ employees in it and a total budget of 
+A
+i
+ units of money. Each team has to divide their budget within their employees equally. But for some teams, it's not possible to divide the budget equally. Therefore, the company have to perform revisions in the teams' budget sizes.  In one revision, to revise the budget of 
+i
+t
+h
+ team, the budget of the first 
+i
+ teams has to be increased by 
+1
+.  Your task is to find the minimum number of revisions needed so that for each team, equal distribution of their budget among the employees is possible.
+
+Constraints:
+* 1 ≤ N ≤ 10 5   
+* 0 ≤ A i  ≤ 10 9   
+* 1 ≤ B i  ≤ 10 9   
+
+Input Format:
+The first line contains an integer 
+N
+, denoting the number of teams.
+Next 
+N
+ lines contain two space-separated integers, 
+A
+i
+ and 
+B
+i
+, each.
+
+Output Format:
+In a single line, print the minimum number of revisions needed so that for each team, equal distribution of their budget among the employees is possible.
+
+
+Sample Input
+
+3
+1 1
+3 7
+5 4
+Sample Output
+
+4
+
+Explanation
+Initially, the budges of the teams are 
+1
+, 
+3
+ and 
+5
+.
+In the first revision, the company will increase the budget for first 
+2
+ teams by 
+1
+. This will make the budgets as 
+2
+, 
+4
+ and 
+5
+.
+In next 
+3
+ revisions, the company will increase the budget of first 
+3
+ teams by 
+1
+. 
+The final budgets will be 
+5
+, 
+7
+ and 
+8
+ which can now be equally distributed within each team.
+You cannot achieve the equal distribution characteristic in less than four revisions.
+
+
+
+
+
+
+
+
+
+Rápido Question 1
+
+Travelling between cities
+You are given positions of N cities situated on X axis. The position of the ith city is denoted by array value Location[i]. You have a bike which can travel exactly K unit distance once the tank is full and each city has a fuel pump. Now you have to answer Q queries where each query is of the following form.
+* LRX :- Find the number of cities lying in the index range [L,R] that you can reach from the city at index X  
+Constraints:
+* 1≤T≤10
+* 1≤N,Q≤50000
+* 1≤K≤1000000
+* 1≤Location i ≤1000000000
+* 1≤L≤R≤N
+* 1≤X≤N  
+Note :- Use fast i/o.
+Format of the input file: First line : T 
+i.e Number of testcases.For each testcase : First line : Three space separated integers N , K and Q. Second line : N space separated integers denoting the location of cities . Next Q lines : Three space separated LRX integers denoting the query.
+
+Format of the output file: Output the answer to each query in a separate line.
+
+Sample Input
+
+1
+5 2 2
+4 3 1 9 6
+1 3 5 
+1 5 2
+Sample Output
+
+3 
+4
+
+Explanation
+For second query you can reach all the cities from city with location 3(index 2) except the city with location 9(index 4).
+
+Note: Your code should be able to convert the sample input into the sample output. However, this is not enough to pass the challenge, because the code will be run on multiple test cases. Therefore, your code must solve this problem statement.
+
+
+
+
+
+
+
+
+
+Rapido
+
+
+New Language
+A new mathematical language (let's call it Ninja) is discovered, in which 8 is completely missing. So, new counting becomes 
+(
+1
+,
+2
+,
+3
+,
+4
+,
+5
+,
+6
+,
+7
+,
+9
+,
+10
+,
+.
+.
+.
+)
+. Whole counting is written without 8. For example, 
+29
+ comes after 
+27
+,
+90
+ comes after 
+79
+, etc. Thus 
+27
++
+1
+=
+29
+, 
+79
++
+1
+=
+90
+. Now, your task is to perform addition, subtraction, multiplication and division operations on two numbers in this new language Ninja. NOTE : The final output also has to be in the language Ninja.
+Input Format The first line contains an integer, T, denoting the number of test cases. For each test case, two integers a and b are given, separated with any one of the above operation 
+(
++
+,
+−
+,
+∗
+,
+/
+)
+. It is guaranteed that answer will not be negative. For division operation, you have to answer integer division.
+Output Format For each test case, print the output of operation in Ninja.
+Constraints
+* 1 ≤ T ≤ 10 5    
+* 0 ≤ a , b ≤ 10 9    ( a and b are in Ninja language )
+* b ≠ 0   for division(/   ) operation
+* a ≥ b   for subtract(−  ) operation
+
+
+Sample Input
+
+9
+1+1
+10+5
+10*10
+9*2
+9*9
+9*10
+90-1
+90/2
+79/2
+Sample Output
+
+2
+15
+100
+17
+71
+90
+79
+40
+39
+
+Explanation
+Explanation for 
+9
+×
+9
+=
+71
+ is given only. First Try to learn how to calculate multiply in math language. For example, if we want to calculate 
+3
+×
+4
+, then write counting in 3 rows and 4 columns and last number(12) will be 
+3
+×
+4
+.
+￼
+Now, we have to calculate 
+9
+×
+9
+ in Ninja language. So, write counting in 9 rows and 9 columns in Ninja language. Last number of the grid (71) will be the answer.
+￼
+
+Note: Your code should be able to convert the sample input into the sample output. However, this is not enough to pass the challenge, because the code will be run on multiple test cases. Therefore, your code must solve this problem statement.
+
+
+
+
+
+
+
+
+
+
+----------------------
+
+
+
+
+Rotate and Speak Game
+
+N children are playing a game of Rotate and Speak. In this game all the children are given a number plate which contains distinct values and they need to form a circle in clockwise order.
+There are Q turns in this game. In each turn two numbers a and b are announced. The rules of the game are as follows :
+
+1. If the number a is equal to 1 then it means that all the children shift b steps in anti clockwise direction.
+2. If the number a is equal to 2 then it means that all the children shift b steps in clockwise direction.
+3. If the number a is equal to 3 then it means that the child who is standing at  position b in the clockwise order speaks the number on his number plate. 
+4. Note that the positions are from 0 to N−1 not 1 to N  
+Input format:
+ First line contains an integer T that denotes the number of test cases First line in every test case contains an integer N denoting the count of children playing the game. Second line in every test case contains 
+N space separated integers , here the ith integer is the number on the number plate of the student i
+ Third line in every test case contains an integer Q,number of turns in the game. Following Q lines ,each contain two integers describing one of the 3 types of moves in a turn.
+
+Output format: For each moves of type 3, you have to print the number that will be spoken in that turn of the game.
+Constraints:
+1≤T≤20
+1≤N,Q≤10^5
+1≤a≤30≤b≤N−1
+Note- Since input files are large, use fast input/output methods.
+
+
+Sample Input
+
+1
+3
+2 1 3
+5
+3 2
+1 1
+3 2
+2 2
+3 2
+Sample Output
+
+3
+2
+1
+
+Explanation
+￼
+task 1: number plate of  2nd child = 3.
+task 2: rotate the circle 1 step anticlockwise, the arrangement becomes {1,3,2}.
+￼
+task 3: number plate of 2nd child = 2.
+taks 4: rotate the circle 2 steps towards right , the arrangement becomes {3,2,1}.
+￼
+task 5: number plate of 2nd child = 1.
+
+Note: Your code should be able to convert the sample input into the sample output. However, this is not enough to pass the challenge, because the code will be run on multiple test cases. Therefore, your code must solve this problem statement.
+Time Limit: 3.0 sec(s) for each input file
+Memory Limit: 256 MB
+Source Limit: 1024 KB
+Marking Scheme: Marks are awarded if any testcase passes
+Allowed Languages: Java, Java 8
+
+
+
+
+
+
+
+Fishes & Ducks
+A forest has N ducks, waiting to be fed, but the age of each duck can be different or same as other ducks. Mommy duck has to feed the ducks with the following requirements:
+
+Every duck should get at least one fish.
+A duck with higher age standing next to the neighboring ducks should get more fish.
+How should mommy duck allocate such that total number of fishes is minimized?
+
+Example #1
+Age of the ducks: [2, 0, 1]
+
+How?: You can give 1 fish to the duck in the middle and 2 to the ducks at each end.
+
+Allocation [2, 1, 2]
+
+Example #2
+Age of the ducks: [1, 2, 3]
+
+Explanation: You can allocate 1 fish to the first duck, 2 to the second duck and 3 to the third duck.
+
+Allocation: [1, 2, 3]
+
+Example #3
+Age of the ducks: [1, 5, 5, 5, 1]
+
+Allocation: [1, 2, 1, 2, 1]
+
+Input Format
+First line contains single integer T denoting the number of test cases. T test cases follow. 
+Each test case contains two lines. The first line is the number of ducks N to be fed. The second line is the space separated ages of the ducks.
+
+Output Format
+For each test case, in a single line print the space separated allocation of fishes.
+
+Constraints
+1 ≤ T (number of test cases) ≤ 5
+
+1 ≤ N (number of ducks) ≤ 10^5
+
+0 ≤ A (age of each duck) ≤ 5
+
+Environment
+Read from STDIN and write to STDOUT.
+
+See sample programs below which read two numbers from STDIN and write their sum to STDOUT.
+
+Java https://goo.gl/QUZhgb (class name “solution”, no package declarations)
+Python3 https://goo.gl/myYeoA
+Ruby https://goo.gl/PhpUyX
+The dashboard provides two modes.
+
+Test runs your code against sample test cases. Submit runs against hidden ones.
+
+Only sample test cases and their elaborate “test” results are made available. We also show a line by line comparison with expected output. There is no score for passing the sample test cases. It’s only for testing and debugging.
+
+For the private test cases, the judging system only shows the exit code, passed status, time consumption, memory consumption and score. We expect users to take cues from these values. Only making a “submit” will yield a score.
+
+

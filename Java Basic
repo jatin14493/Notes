@@ -1,0 +1,133 @@
+Java Basic
+
+
+few design patterns in standard JDK library?
+Decorator design pattern which is used in various Java IO classes, Singleton pattern which is used in Runtime , Calendar and various other classes, Factory pattern which is used along with various Immutable classes likes Boolean e.g.Boolean.valueOf and Observer pattern which is used in Swing and many event listener frameworks.
+
+
+
+Design Pattern :  Flyweight Pattern
+
+Flyweight design pattern is used when we need to create a lot of Objects of a class. Since every object consumes memory space that can be crucial for low memory devices, such as mobile devices or embedded systems, flyweight design pattern can be applied to reduce the load on memory by sharing objects. String Pool implementation in java is one of the best example of Flyweight pattern implementation.
+
+
+
+4 types of Java inner classes
+ 
+There are 4 different types of inner classes in Java. This post illustrates them by using 4 simple examples.
+1. Static Nested Classes
+class Outer {
+	static class Inner {
+		void go() {
+			System.out.println("Inner class reference is: " + this);
+		}
+	}
+}
+ 
+public class Test {
+	public static void main(String[] args) {
+		Outer.Inner n = new Outer.Inner();
+		n.go();
+	}
+}
+Inner class reference is: Outer$Inner@19e7ce87
+2. Member Inner Class
+Member class is instance-specific. It has access to all methods, fields, and the Outer's this reference.
+public class Outer {
+    private int x = 100;
+ 
+    public void makeInner(){
+        Inner in = new Inner();
+        in.seeOuter();
+    }
+ 
+    class Inner{
+        public void seeOuter(){
+            System.out.println("Outer x is " + x);
+            System.out.println("Inner class reference is " + this);
+            System.out.println("Outer class reference is " + Outer.this);
+        }
+    }
+ 
+    public static void main(String [] args){
+    	Outer o = new Outer();
+        Inner i = o.new Inner();
+        i.seeOuter();
+    }
+}
+Outer x is 100
+Inner class reference is Outer$Inner@4dfd9726
+Outer class reference is Outer@43ce67ca
+3. Method-Local Inner Classes
+public class Outer {
+	private String x = "outer";
+ 
+	public void doStuff() {
+		class MyInner {
+			public void seeOuter() {
+				System.out.println("x is " + x);
+			}
+		}
+ 
+		MyInner i = new MyInner();
+		i.seeOuter();
+	}
+ 
+	public static void main(String[] args) {
+		Outer o = new Outer();
+		o.doStuff();
+	}
+}
+x is outer
+public class Outer {
+	private static String x = "static outer";
+ 
+	public static void doStuff() {
+		class MyInner {
+			public void seeOuter() {
+				System.out.println("x is " + x);
+			}
+		}
+ 
+		MyInner i = new MyInner();
+		i.seeOuter();
+	}
+ 
+	public static void main(String[] args) {
+		Outer.doStuff();
+	}
+}
+x is static outer
+4. Anonymous Inner Classes
+This is frequently used when you add an action listener to a widget in a GUI application.
+button.addActionListener(new ActionListener(){
+     public void actionPerformed(ActionEvent e){
+         comp.setText("Button has been clicked");
+     }
+});
+
+
+
+
+Using Curl in Java
+
+
+Java Changes :   private static void getGithubContentUsingURLConnection(String token, String url) {
+		String newUrl = "https://" + url;
+		System.out.println(newUrl);
+		try {
+			URL myURL = new URL(newUrl);
+			URLConnection connection = myURL.openConnection();
+			token = token + ":x-oauth-basic";
+			String authString = "Basic " + Base64.encodeBase64String(token.getBytes());
+			connection.setRequestProperty("Authorization", authString);
+			InputStream crunchifyInStream = connection.getInputStream();
+			System.out.println(crunchifyGetStringFromStream(crunchifyInStream));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+
+
+

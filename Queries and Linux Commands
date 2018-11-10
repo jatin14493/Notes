@@ -1,0 +1,123 @@
+Queries and Linux Commands
+
+
+SELECT name, customers.acc_num, COUNT(*) AS number_of_orders
+FROM  customers, orders
+WHERE customers.acc_num = orders.acc_num
+GROUP BY name
+ORDER BY customers.acc_num;
+
+
+
+multi platform, a particular good bridge between Linux and Windows. 
+rich library set 
+large community, lots of research done using Java 
+dynamically adjusts to hardware (eg. video acceleration, Machine Code optimizing, etc). 
+
+
+SQL Query
+
+fetch all department names along with the number of employess in that department (consider even the unstaffed) and then the result should be sorted in descending of the number of employees and if two departments have same count then sort by department name
+
+
+SELECT 
+    Department.name, 
+    COUNT(Employee.id)
+FROM 
+    Department
+LEFT JOIN 
+    Employee ON Department.dept_id = Employee.dept_id
+GROUP BY 
+    Department.dept_id, 
+    Department.name
+ORDER BY 
+    COUNT(Employee.id) DESC, 
+    Department.name
+
+
+
+
+Table Person(id, first_name, last_name)
+
+
+I want you to fetch the count of all duplicate records that have same first_name and last_name
+
+Table
+1, ABC, XYZ
+2, ABC, XYZ
+4, ABC, XYZ
+5, TYP, FHG
+6, TYP, FHG
+3, CDF, FHG
+
+Output
+ABC, XYZ, 3
+TYP, FHG, 2
+
+select first_name, last_name , count(*) from Person
+group by first_name , last_name
+having (count(*) >1 );
+
+
+
+
+
+MYSQL
+
+
+How to add MySQL to $PATH variable:
+cd to your home folder
+$ open -t .bash_profile
+Try adding the following line to your .bash_profile file.
+export PATH=${PATH}:/usr/local/mysql/bin/
+
+Setting the MySQL root user password on OS X
+$ mysql -u root -p
+
+
+To change Password :
+mysql$ ALTER USER 'root'@'localhost' IDENTIFIED BY 'MyNewPass'; 
+
+
+
+
+
+
+
+
+Copy Command
+
+cp -r /Users/B0205328/Desktop/root/.m2/repository/. ~/Users/B0205328/.m2/repository
+
+SCP COMMANDS + Hidden Files
+
+scp ABC-1.0.0.jar  <UserName>@<IP>:<Address>
+ls -altrh
+
+
+
+
+
+sudo su -
+su - weblogic
+rl
+tail -f info.log
+
+
+http://10.56.110.190:7001/console/console.portal?AppApplicationInstallPortlet_actionOverride=/com/bea/console/actions/app/install/selectUploadApp
+
+
+
+//Changing permission
+chown weblogic:weblogic ABC.war
+chmod 777 ABC.war
+
+then
+bd
+su - weblogic
+./restart
+
+chmod 777 ABC.war
+chown weblogic:weblogic ABC.war
+ls -ltr
+bd

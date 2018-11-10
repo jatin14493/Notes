@@ -1,0 +1,34 @@
+Java Concurrency Essentials
+
+
+Countdownlatch Vs Cyclicbarrier | Java Concurrency Utilities
+
+
+CountDownLatch Vs CyclicBarrier : Though both are used as a synchronization aid that allows one or more threads to wait but there are certain differences between them that you should know in order to know when one of these utilities will serve you better. 
+As per the java.util.concurrent API, 
+
+* CountDownLatch: A synchronization aid that allows one or more threads to wait until a set of operations being performed in other threads complete.
+* CyclicBarrier: A synchronization aid that allows a set of threads to all wait for each other to reach a common barrier point.
+Here are few basic differences.
+
+1. In CountDownLatch, only main thread waits for other threads to complete their execution, where as in CyclicBarrier, Each worker threads wait for each other to complete their execution. Let's understand this by following Example :
+
+
+* CountDownLatch:Consider a IT world scenario where manager divided modules between development teams (A and B) and he wants to assign it to QA team for testing only when both the teams completes their task. Here manager thread works as main thread and development team works as worker thread. Manager thread waits for development teams thread to complete their task. Once developer teams complete their tasks, they will inform manager thread and then manager thread assign modules to QA team.  
+* CyclicBarrier:Consider the same scenario where manager divided modules between development teams (A and B). He goes on leave. He asked both teams to wait for each other to complete their respective taskand  once both teams are done, assign it to QA team for testing. Here manager thread works as main thread and development team works as worker thread. Development team threads wait for other development team threads after completing their task. 
+In Other words, a CountDownLatch initialized to N can be used to make one thread wait until N threads have completed some action. Where as if CyclicBarrier has been initialized to 3 then you should have at least 3 threads to call await().
+
+2. Reusability :We can not reuse same CountDownLatch instance once count reaches to zero and latch is open. CyclicBarrier can be reused after all the waiting threads are released.
+
+3. barrierAction :  A  CyclicBarrier  supports an optional Runnable command that is run once per barrier point, after the last thread in the party arrives, but before any threads are released.
+So with CyclicBarrier you have an option to have an Action class specified in the CyclicBarrier constructor that will be run after the last thread has called await(). This barrier action is useful for updating shared-state before any of the parties continue.
+
+1	public CyclicBarrier(int parties, Runnable barrierAction)
+
+CountDownLatch doesn't provide any such constructor to specify a runnable action.
+
+Summary
+	COUNTDOWN LATCH	CYCLIC BARRIER
+1	Main threads waits for other threads to complete their execution.	Each worker threads wait for each other to complete their execution
+2	We can not reuse same CountDownLatch instance once count reaches to zero and latch is open.	CyclicBarrier can be reused by resetting Barrier, Once barrier is broken.
+3	No Such Action can be provided with CountDownLatch	We can provide barrierAction that is run once per barrier point, after the last thread in the party arrives, but before any threads are released.
